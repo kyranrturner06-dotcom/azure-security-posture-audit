@@ -2,7 +2,7 @@
 
 # <ins>**Introduction**</ins>
 
-In this project I will deploy an insecure; VM, storage account, and IAM roles. I will then demostrate correcting those vulnerabilities after Defender has flagged them. This lab will utilise tools like; Azure Portal which will be how I provision and manage resources, Azure Defender to help flag misconfigurations, Azure RBAC (as part of IAM) for applying privilege levels, and more. Image 1 below first shows all resources deployed within the resource group I created (Posture_audit_rg), in their original, vulnerable state.
+In this project I will deploy an insecure; VM, storage account, and IAM roles. I will then demonstrate correcting those vulnerabilities after Defender has flagged them. This lab will utilise tools like; Azure Portal which will be how I provision and manage resources, Azure Defender to help flag misconfigurations, Azure RBAC (as part of IAM) for applying privilege levels, and more. Image 1 below first shows all resources deployed within the resource group I created (Posture_audit_rg), in their original, vulnerable state.
 
 _Image 1:_
 <img width="1488" height="728" alt="Screenshot 2026-05-28 103154" src="https://github.com/user-attachments/assets/88029036-4160-4918-9a5b-2a492460dc98" />
@@ -17,7 +17,7 @@ _Image Set 2:_
 
 **Update & EDR:**
 
-Defender has also flagged misconfigurations, suggesting an update to windows server as well as EDR configuration issues. Keeping any device up-to date is one of the most effective ways to reduce vulnerabilities. This will remove bugs and known vulnerabilities, preventing attackers from exploting them. In this case there are 58 of them. 
+Defender has also flagged misconfigurations, suggesting an update to windows server as well as EDR configuration issues. Keeping any device up-to date is one of the most effective ways to reduce vulnerabilities. This will remove bugs and known vulnerabilities, preventing attackers from exploiting them. In this case there are 58 of them. 
 
 The EDR issue is important, it is saying microsoft defender for endpoint (MDE) is not running or is not configured correctly for this VM. A missing EDR (endpoint detection response) leaves the resource vulnerable to attack. There is no active prevention for cyberattacks as the EDR isn't continuously detecting, analysing, and then preventing attacks in real time like it would normally do. All of this is visible in Image set 3.
 
@@ -61,7 +61,7 @@ _Image 6:_
 
 # <ins>**The Storage Account**</ins>
 
-The storage account in Image set 7 has been configured to allow public/anonymous access. This means anything on there will be viewable by the public which could put the organization out of compliance. Operations and trade secrets released to the public may also incure economic damage to the organization through loss of trust or competitor action. Access 'Enabled to all networks' and 'Allow blob anonymous access' are the misconfigurations that must be fixed. The former of the two will allow anyone to reach the storage account, the latter configuration means no authentication is needed, anyone that reaches the storage account will have access.
+The storage account in Image set 7 has been configured to allow public/anonymous access. This means anything on there will be viewable by the public which could put the organization out of compliance. Operations and trade secrets released to the public may also incur economic damage to the organization through loss of trust or competitor action. Access 'Enabled to all networks' and 'Allow blob anonymous access' are the misconfigurations that must be fixed. The former of the two will allow anyone to reach the storage account, the latter configuration means no authentication is needed, anyone that reaches the storage account will have access.
 
 _Image Set 7:_
 <img width="1678" height="749" alt="image" src="https://github.com/user-attachments/assets/5fc2202e-7547-40e9-adb1-5a50e7a4505e" />
