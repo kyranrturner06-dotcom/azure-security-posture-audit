@@ -77,7 +77,7 @@ _Image Set 8:_
 <img width="1703" height="423" alt="image" src="https://github.com/user-attachments/assets/6dfdaefa-d817-44d6-b561-ca23b26e6eef" />
 
 # <ins>**Conclusion**</ins>
-This concludes the Audit Project, all vulnerabilities have been corrected. Attack surface and compliance risks have been minimized by reducing network exposure to the internet, applying patches through an update, and enforcing least privilege in the IAM settings. In a real environment, the EDR issue would need to be resolved by implementing MDE and making sure to configure it to send alerts from detection of malicious activity, which would require the company to spend money on a plan which allows use of the tool. All resources; the VM, storage account, and the IAM roles are now working as expected thanks to recommendations from Defender, along with manual analysis. 
+This concludes the Audit Project, all vulnerabilities have been corrected. Attack surface and compliance risks have been minimized by reducing network exposure to the internet, applying patches through an update, and enforcing least privilege in the IAM settings. In a real environment, the EDR issue would need to be resolved by implementing MDE and making sure to configure it to send alerts from detection of malicious activity, which would require the company to spend money on a plan which allows use of the tool. If I wanted to prevent misconfigurations like this from being deployed in future, I would create rules in Azure Policy to restrict certain actions. All resources; the VM, storage account, and the IAM roles are now working as expected thanks to recommendations from Defender, along with manual analysis. 
 
 
 
