@@ -1,5 +1,8 @@
 # Azure-Security-Posture-Audit
-In this project I will deploy an insecure; VM, storage account, and IAM roles. I will then demostrate correcting those vulnerabilities after Defender has flagged them. Image 1 below first shows all resources deployed within the resource group I created (Posture_audit_rg), in their original, vulnerable state.
+
+# <ins>**Introduction**</ins>
+
+In this project I will deploy an insecure; VM, storage account, and IAM roles. I will then demostrate correcting those vulnerabilities after Defender has flagged them. This lab will utilise tools like; Azure Portal which will be how I provision and manage resources, Azure Defender to help flag misconfigurations, Azure RBAC (as part of IAM) for applying privilege levels, and more. Image 1 below first shows all resources deployed within the resource group I created (Posture_audit_rg), in their original, vulnerable state.
 
 _Image 1:_
 <img width="1488" height="728" alt="Screenshot 2026-05-28 103154" src="https://github.com/user-attachments/assets/88029036-4160-4918-9a5b-2a492460dc98" />
@@ -12,8 +15,11 @@ _Image Set 2:_
 <img width="1672" height="466" alt="Screenshot 2026-05-28 103312" src="https://github.com/user-attachments/assets/6eb033aa-5f8d-48f9-88a9-081d955fdda2" />
 <img width="1434" height="430" alt="image" src="https://github.com/user-attachments/assets/cbe6b782-8b97-4b68-a4f3-8dc71c8f98d6" />
 
+**Update & EDR:**
 
-Defender has also flagged misconfigurations, suggesting an update to windows server as well as EDR configuration issues. Keeping any device up-to date is one of the most effective ways to reduce vulnerabilities. This will remove bugs and known vulnerabilities, preventing attackers from exploting them. In this case there are 58 of them. The EDR issue is important, it is saying microsoft defender for endpoint (MDE) is not running or is not configured correctly for this VM. A missing EDR (endpoint detection response) leaves the resource vulnerable to attack. There is no active prevention for cyberattacks as the EDR isn't continuously detecting, analysing, and then preventing attacks in real time like it would normally do. All of this is visible in Image set 3.
+Defender has also flagged misconfigurations, suggesting an update to windows server as well as EDR configuration issues. Keeping any device up-to date is one of the most effective ways to reduce vulnerabilities. This will remove bugs and known vulnerabilities, preventing attackers from exploting them. In this case there are 58 of them. 
+
+The EDR issue is important, it is saying microsoft defender for endpoint (MDE) is not running or is not configured correctly for this VM. A missing EDR (endpoint detection response) leaves the resource vulnerable to attack. There is no active prevention for cyberattacks as the EDR isn't continuously detecting, analysing, and then preventing attacks in real time like it would normally do. All of this is visible in Image set 3.
 
 _Image Set 3:_
 <img width="1699" height="548" alt="image" src="https://github.com/user-attachments/assets/f2a60b73-0ce1-4c58-b888-3ffc9088e34a" />
@@ -71,7 +77,7 @@ _Image Set 8:_
 <img width="1703" height="423" alt="image" src="https://github.com/user-attachments/assets/6dfdaefa-d817-44d6-b561-ca23b26e6eef" />
 
 # <ins>**Conclusion**</ins>
-This concludes the Audit Project, all vulnerabilities have been corrected, in turn minimizing the attack surface and reducing any issues of compliance. All resources; the VM, storage account, and the IAM roles are now working as expected.
+This concludes the Audit Project, all vulnerabilities have been corrected. Attack surface and compliance risks have been minimized by reducing network exposure to the internet, applying patches through an update, and enforcing least privilege in the IAM settings. In a real environment, the EDR issue would need to be resolved by implementing MDE and making sure to configure it to send alerts from detection of malicious activity, which would require the company to spend money on a plan which allows use of the tool. All resources; the VM, storage account, and the IAM roles are now working as expected thanks to recommendations from Defender, along with manual analysis. 
 
 
 
