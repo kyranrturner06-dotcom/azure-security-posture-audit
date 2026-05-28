@@ -38,7 +38,7 @@ The Update for the VM included improved intelligence for Microsoft Defender Anti
 <img width="1478" height="630" alt="image" src="https://github.com/user-attachments/assets/c60f43d2-303f-4846-a6f1-f1c5cf9afaf8" />
 
 
-# <ins>**Identity Access Management Configurations**</ins>
+# <ins>**Identity & Access Management Configurations**</ins>
 
 Image 5 displays overprivilege. Owner is the most permissive role in azure which means it grants the user full control/power over everything, and allows them to grant permissions to others. This should not be granted to a regular user at the resource group level as it violates the concept of least privilege. Insider threats become a risk, accidental damage is possible, audits may fail compliance checks and if the account was to be compromised it would give the attacker significantly more control over the environment. 
 
