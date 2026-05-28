@@ -1,5 +1,5 @@
 # Azure-Security-Posture-Audit
-In this project I will demonstrate deploying an insecure; VM, storage account, and IAM roles. I will then correct those vulnerabilities after Defender has flagged them. Image 1 below first shows all resources deployed within the resource group i created (Posture_audit_rg), in their original, vulnerable state.
+In this project I will deploy an insecure; VM, storage account, and IAM roles. I will then demostrate correcting those vulnerabilities after Defender has flagged them. Image 1 below first shows all resources deployed within the resource group I created (Posture_audit_rg), in their original, vulnerable state.
 
 _Image 1:_
 <img width="1488" height="728" alt="Screenshot 2026-05-28 103154" src="https://github.com/user-attachments/assets/88029036-4160-4918-9a5b-2a492460dc98" />
@@ -50,5 +50,28 @@ _Image 5:_
 
 To fix this issue, I changed the role of the user in the IAM settings of the resource group. I deleted their owner role, added a new role assignment for the same user, and gave them the reader role instead. This now means they can only view the resource group contents, they can not modify it or escalate the privilege of others. Refer to Image 6.
 
-_Image 6:_                          
+_Image 6:_   
 <img width="932" height="512" alt="image" src="https://github.com/user-attachments/assets/13877015-4a6c-42b7-9f3a-2837e7195a8e" />
+
+# <ins>**The Storage Account**</ins>
+
+The storage account in Image set 7 has been configured to allow public/anonymous access. This means anything on there will be viewable by the public which could put the organization out of compliance. Operations and trade secrets released to the public may also incure economic damage to the organization through loss of trust or competitor action. Access 'Enabled to all networks' and 'Allow blob anonymous access' are the misconfigurations that must be fixed. The former of the two will allow anyone to reach the storage account, the latter configuration means no authentication is needed, anyone that reaches the storage account will have access.
+
+_Image Set 7:_
+<img width="1678" height="749" alt="image" src="https://github.com/user-attachments/assets/5fc2202e-7547-40e9-adb1-5a50e7a4505e" />
+<img width="1045" height="304" alt="image" src="https://github.com/user-attachments/assets/dc89466c-060e-483c-99e4-159c698a5df9" />
+
+
+**Fixing the Storage Account:**
+
+A simple fix, to stop the storage account being accessible to the internet, I went to the 'Networking' tab, clicked 'Manage' under Public network access, and changed the configuration to 'disabled'. Disabling anonymous access was completed by going to the 'Configurations' tab, and once again checking 'disabled' for 'Allow Blob anonymous access'.
+
+_Image Set 8:_
+<img width="1420" height="375" alt="image" src="https://github.com/user-attachments/assets/f4afc913-507d-491c-9ab0-bf15b5ea535d" />
+<img width="1703" height="423" alt="image" src="https://github.com/user-attachments/assets/6dfdaefa-d817-44d6-b561-ca23b26e6eef" />
+
+# <ins>**Conclusion**</ins>
+This concludes the Audit Project, all vulnerabilities have been corrected, in turn minimizing the attack surface and reducing any issues of compliance. All resources; the VM, storage account, and the IAM roles are now working as expected.
+
+
+
